@@ -1,3 +1,5 @@
 config_saved.lua
 *.log
 __pycache__/
+dist/*.zip
+dist/stage/
