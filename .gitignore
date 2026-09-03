@@ -1,0 +1,3 @@
+config_saved.lua
+*.log
+__pycache__/
