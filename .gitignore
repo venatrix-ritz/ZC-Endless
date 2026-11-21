@@ -3,3 +3,4 @@ config_saved.lua
 __pycache__/
 dist/*.zip
 dist/stage/
+CLAUDE.md
