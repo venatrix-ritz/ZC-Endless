@@ -1,8 +1,6 @@
 # Nexus Mods upload — fill-in sheet
 
-Everything below is ready to paste into the Nexus "Add a mod" form. I can't submit it for
-you (no API for mod creation; the form needs ToS acceptance + Publish, which I can't click),
-so this is the manual part.
+Everything below is ready to paste into the Nexus "Add a mod" form. I can't submit it for you (no API for mod creation; the form needs ToS acceptance + Publish, which I can't click), so this is the manual part.
 
 **File to upload:** `dist/ZC_Endless-0.5.zip`
 
@@ -24,8 +22,7 @@ so this is the manual part.
 ### Permissions (suggested)
 
 - Users can use assets without permission: **Yes**
-- Modification / derivative mods without permission: **Yes** (it's MIT, and it builds on
-  everyone else's work — pay it forward)
+- Modification / derivative mods without permission: **Yes** (it's MIT, and it builds on everyone else's work — pay it forward)
 - Upload to other sites without permission: your call; "ask first" is fine
 - Credits note: this mod reuses techniques from other SWZC modders — keep the CREDITS section
 
