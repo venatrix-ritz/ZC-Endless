@@ -345,7 +345,8 @@ local function TopUp(reason)
         local tbl = LoadObj(path)
         if valid(tbl) then
             local batch = math.min(2, need - added)
-            -- SelectAndAddMissions(WorldCtx, FSimpleRandomGenerator& Generator, int32 NumToSelect, bool bAllowDuplicates)
+            -- SelectAndAddMissions(WorldCtx, FSimpleRandomGenerator& Generator,
+            --                      int32 NumToSelect, bool bAllowDuplicates)
             -- Generator is an in/out struct param -> pass an empty Lua table so UE4SS
             -- can marshal it. Passing the raw struct userdata errors ("no table on the stack").
             local ok, res = pcall(function()
