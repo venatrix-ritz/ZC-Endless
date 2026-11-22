@@ -88,5 +88,5 @@ Delete `ue4ss\Mods\ZC_Endless\` and remove its `mods.txt` / `mods.json` entries 
 | No `[ZC_Endless]` lines in the log | Folder in the right place? `Scripts\main.lua` present? UE4SS itself loading? `DebugLog = true` in `config.lua`? |
 | `[ZC_Endless] ... syntax error` | You edited `main.lua` / `config.lua`: run `tools/luacheck.py` on it. |
 | Menu key does nothing | `End` may be rebound; set `TogglePanelKey` in `config.lua` to `HOME`, `INS`, `F1`... |
-| Settings do not stick after `7` | The save path is hard-coded to the `F:\Steam\...` install (`main.lua:88`); on any other install path the save fails and the log shows `menu: settings SAVE FAILED`. |
+| Settings do not stick after `7` | The log shows `menu: settings SAVE FAILED` with the reason on the line before it. The mod writes `config_saved.lua` next to `main.lua`; check that the `Scripts` folder is not read-only. |
 | Game crashes on Den load | Set `EnableBoardTopUp = false` in `config.lua` (it is the default). Report the last `[ZC_Endless]` lines from `UE4SS.log`. |
