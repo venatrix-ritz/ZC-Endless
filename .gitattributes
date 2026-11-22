@@ -1,1 +1,21 @@
 * text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.reg binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.7z binary
+*.gz binary
+*.las binary
+*.laz binary
+*.tif binary
+*.tiff binary
+*.apk binary
+*.aab binary
+*.bin binary
+*.uf2 binary

@@ -1,0 +1,27 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+max_line_length = 120
+ktlint_code_style = ktlint_official
+
+[*.{json,jsonc,yml,yaml,xml,html,css,js,mjs,ts,md}]
+indent_size = 2
+
+[*.{gd,gdshader,plist}]
+indent_style = tab
+
+[Makefile]
+indent_style = tab
+
+[*.{bat,cmd}]
+end_of_line = crlf
+
+[*.reg]
+charset = utf-16le
+end_of_line = crlf

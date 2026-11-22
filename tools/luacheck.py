@@ -7,6 +7,7 @@
 Exit code is non-zero if any file fails to compile. This checks syntax only, with
 Lua 5.5 (lupa's bundled runtime); UE4SS runs LuaJIT/5.1, so avoid 5.2+-only syntax.
 """
+
 import sys
 
 try:

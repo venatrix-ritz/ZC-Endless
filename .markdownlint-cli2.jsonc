@@ -1,0 +1,7 @@
+{
+  "config": {
+    "default": false,
+    "MD004": { "style": "dash" },
+    "MD040": true
+  }
+}
