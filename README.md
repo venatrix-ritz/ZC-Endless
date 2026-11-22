@@ -62,7 +62,7 @@ Press `End` to open the menu (`F11` is the game's fullscreen toggle, so it is no
  [End] close
 ```
 
-`7` writes your choices to `config_saved.lua`, which is loaded on top of `config.lua` on the next launch; delete that file to reset. The save path is hard-coded to `F:\Steam\steamapps\common\STAR WARS Zero Company\...\ZC_Endless\Scripts\config_saved.lua` (`main.lua:88`), so saving only works for a game installed there.
+`7` writes your choices to `config_saved.lua`, which is loaded on top of `config.lua` on the next launch; delete that file to reset. The file is written next to `main.lua` in `ue4ss\Mods\ZC_Endless\Scripts\`, wherever the game is installed.
 
 There is no ImGui in this UE4SS build, so the menu is keyboard-driven, not clickable.
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Fix: menu save (`7`) wrote `config_saved.lua` to a hard-coded `F:\Steam\...` path, so it failed on every other install. The path now comes from the script's own folder.
+
 ## 0.5 - 2026-09-02
 
 First public release.

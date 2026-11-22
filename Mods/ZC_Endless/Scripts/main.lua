@@ -84,12 +84,30 @@ do
 end
 
 local FREEZE_KEY = "ZC_Endless_Freeze"
-local SAVED_PATH =
-    [[F:\Steam\steamapps\common\STAR WARS Zero Company\SWZeroCompany\Binaries\Win64\ue4ss\Mods\ZC_Endless\Scripts\config_saved.lua]]
+-- UE4SS loads this file with luaL_loadfile, so the chunk source is "@<full path>\main.lua";
+-- config_saved.lua sits next to it, in the folder require() reads it from.
+local function ScriptDirectory()
+    local info = debug and debug.getinfo and debug.getinfo(1, "S")
+    local source = info and info.source
+    if type(source) ~= "string" then
+        return nil
+    end
+    return source:match("^@(.*[/\\])")
+end
+
+local SCRIPT_DIR = ScriptDirectory()
+local SAVED_PATH = SCRIPT_DIR and (SCRIPT_DIR .. "config_saved.lua")
+if not SAVED_PATH then
+    print("[ZC_Endless] WARNING: could not find the Scripts folder; menu save (7) is disabled.\n")
+end
 
 local function PersistSettings()
-    local f = io.open(SAVED_PATH, "w")
+    if not SAVED_PATH then
+        return false
+    end
+    local f, err = io.open(SAVED_PATH, "w")
     if not f then
+        print("[ZC_Endless] could not write " .. SAVED_PATH .. ": " .. tostring(err) .. "\n")
         return false
     end
     f:write("-- written by ZC_Endless in-game menu (numpad 6). delete to reset to config.lua.\n")
