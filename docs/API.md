@@ -1,12 +1,10 @@
-# STAR WARS Zero Company — strategy‑layer API reference
+# STAR WARS Zero Company: strategy-layer API reference
 
-Signatures taken from the UE4SS CXX header dump (`Bruno.hpp`, `BitReactorGame.hpp`) of the
-Steam build tested Sept 2026. `WorldCtx` = any `UObject` world context (PlayerController /
-GameInstance work).
+Signatures taken from the UE4SS CXX header dump (`Bruno.hpp`, `BitReactorGame.hpp`) of the Steam build tested Sept 2026. `WorldCtx` = any `UObject` world context (PlayerController / GameInstance work).
 
 ## Accessors
 
-```
+```text
 StaticFindObject("/Script/Bruno.Default__BrunoStrategyGameState")
     :GetBrunoStrategyGameState(WorldCtx)          -> ABrunoStrategyGameState*   (holds all mgr ptrs)
 
@@ -20,11 +18,11 @@ Default__BrunoRosterManager             :GetRosterManager(WorldCtx)
 Default__BrunoRosterLevelManager        :GetRosterLevelManager(WorldCtx)
 ```
 
-Or just `FindFirstOf("BrunoMissionCentral")` etc. — they are single live actors in the hub.
+Or just `FindFirstOf("BrunoMissionCentral")` etc.; they are single live actors in the hub.
 
 ## Campaign
 
-```
+```text
 class UBrunoCampaign : UBitReactorAssetDefinitionBase
     bool  ShouldCampaignComplete(int32 Turn)          -- hook -> force false for endless
     int32 GetTotalTurns()
@@ -44,7 +42,7 @@ End state:      GMState_PostCampaign_Credits_C
 
 ## Strategy turn
 
-```
+```text
 class ABrunoStrategyTurnManager : AInfo
     void  AddTurnBlockingKey(FString)
     void  RemoveTurnBlockingKey(FString)
@@ -59,7 +57,7 @@ class ABrunoStrategyTurnManager : AInfo
 
 ## Missions
 
-```
+```text
 class ABrunoMissionCentral : AInfo
     void       OnStrategyTurnBegin(int32 Turn)                  -- per-turn entry point
     TMap<FMissionID,FBrunoMissionRuntimeData> GetAvailableMissions()
@@ -107,7 +105,7 @@ Mission data assets:   /Game/Game/GameData/MissionData/{Story_Main,AuthoredHero,
 
 ## Strategy objectives (the holotable "objectives" system)
 
-```
+```text
 class ABrunoStrategyObjectiveManager : AInfo
     FObjectiveID AddObjective(UBrunoStrategyObjective* NewObjective)
     TArray<...>  GetCurrentObjectives() / GetCompletedObjectives() / GetExpiredObjectives() / GetHiddenObjectives()
@@ -119,7 +117,7 @@ class ABrunoStrategyObjectiveManager : AInfo
 
 ## Roster / economy / facilities
 
-```
+```text
 class ABrunoRosterManager : AInfo
     TArray<AActor*> GetRosterActors()
     void  DismissCharacterFromRoster(AActor*)
@@ -159,7 +157,7 @@ Intel  item : /Game/Game/GameData/ItemData/Resources/Resource_Intelligence
 
 ## Permadeath / ironman / tutorials (framework layer)
 
-```
+```text
 StaticFindObject("/Script/BitReactorGame.Default__BitReactorGameStatics")
     bool GetPermaDeathWC(gi) / void SetPermaDeath(gi, bool)
     bool GetIronmanMode(gi)  / void SetIronmanMode(gi, bool)
@@ -185,7 +183,7 @@ FindFirstOf("BrunoDatabankNewCharacterViewModel")           -- hook :ConfirmNewC
 
 ## CheatManager
 
-```
+```text
 PlayerController.CheatManager  (also FindFirstOf("BP_BrunoCheatManager_C"))
     CompleteMission()  CompleteEncounter()  GrantFocusPoints(FString name)
     GainRosterLevel()  ResetActionPoints(bool)
